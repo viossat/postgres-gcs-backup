@@ -1,0 +1,10 @@
+{
+  "name": "postgres-gcs-backup",
+  "author": "Mathieu Viossat",
+  "license": "MIT",
+  "main": "index.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "@google-cloud/storage": "^2.4.2"
+  }
+}
