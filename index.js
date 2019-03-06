@@ -11,6 +11,7 @@ const stream = file.createWriteStream({
   resumable: false,
 }).on('error', err => {
   console.error(err);
+  process.exit(1);
 }).on('finish', () => {
   console.log('dump ' + filename + ' saved (' + size + ' bytes)');
 });
@@ -30,5 +31,6 @@ dump.on('close', code => {
   stream.end();
   if (code !== 0) {
     console.error('pg_dump exited with code ' + code);
+    process.exit(code);
   }
 });
