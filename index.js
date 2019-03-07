@@ -9,6 +9,9 @@ const file = bucket.file(filename);
 let size = 0;
 const stream = file.createWriteStream({
   resumable: false,
+  metadata: {
+    contentType: 'application/sql',
+  },
 }).on('error', err => {
   console.error(err);
   process.exit(1);
